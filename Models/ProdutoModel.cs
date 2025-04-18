@@ -1,8 +1,11 @@
-﻿namespace WebApi_.NET_9.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace WebApi_.NET_9.Models
 {
     public class ProdutoModel
     {
         //atalho para criar atributos prop
+        [Key]
         public int IdProduto { get; set; }
         public string NomeProduto { get; set; } = string.Empty;
         public string DescricaoProduto { get; set; } = string.Empty;
