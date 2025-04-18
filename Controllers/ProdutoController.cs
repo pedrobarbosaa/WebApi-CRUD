@@ -22,5 +22,16 @@ namespace WebApi_.NET_9.Controllers
             var produtos = _context.Produtos.ToList();
             return Ok(produtos);
         }
+
+        [HttpGet("{IdProduto}")]
+        public ActionResult<ProdutoModel> BuscarProdutosPorId(int IdProduto)
+        {
+            var produto = _context.Produtos.Find(IdProduto);
+            if(produto == null)
+            {
+                return NotFound("Registro não encontrado.");
+            }
+            return Ok(produto); 
+        }
     }
 }
